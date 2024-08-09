@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            color: red;
+            margin-top: 20px;
+        }
+        .navigation {
+            margin: 20px 0;
+        }
+        .navigation a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .column {
+            width: 30%;
+            padding: 5px;
+        }
+        .column img {
+            width: 100%;
+            height: auto;
+        }
+        .column p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+      
+        .carousel {
+            max-width: 600px;
+            margin: 50px auto;
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+
+    
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>WELCOME</h1>
+
+    <div class="navigation">
+        <a href="#accueil">Accueil</a>
+        <a href="#about">About</a>
+    </div>
+
+    <div id="section1" class="container">
+        <img src="logo.jpg" alt="cyber-logo" style="width:150px;height:160px;"> 
+
+        
+        <div class="carousel">
+            <img src="co1.png" alt="Image 1" class="active">
+            <img src="co2.png" alt="Image 2">
+            <img src="co3.png" alt="Image 3">
+        </div>
+        
+
+        <div class="row">
+            <div class="column">
+              <img src="co1.png" alt="Company 1">
+              <p>
+                <a href="https://www.cisco.com/c/en/us/about.html" target="_blank">Cisco Systems</a> was founded in December 1984 by Leonard Bosack and Sandy Lerner, two Stanford University computer scientists who had been instrumental in connecting computers at Stanford. They pioneered the concept of a local area network (LAN) being used to connect distant computers over a multiprotocol router system.
+            </p>
+            
+            </div>
+            <div class="column">
+              <img src="co2.png" alt="Company 2">
+              <p>
+                The <a href="https://www.paloaltonetworks.com/" target="_blank">Palo Alto Networks</a> firewall can augment or replace your existing firewall and can be installed transparently in any network or configured to support a switched or routed environment. Multigigabit speeds and a single-pass architecture provide these services to you with little or no impact on network latency.
+            </p>
+            
+            </div>
+            <div class="column">
+              <img src="co3.png" alt="Company 3">
+              <p>
+                <a href="https://usa.sika.com/en/construction/concrete/admixtures/accelerators/sika-rapid-1.html" target="_blank">Sika® Rapid-1</a> is a non-chloride strength/hardening accelerator formulated to increase the early strength of concrete without affecting the initial workability. Sika® Rapid-1 meets the requirements of ASTM C-494, Type C accelerating admixture.
+            </p>
+            
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[index].classList.remove('active');
+            index = (index + 1) % totalImages;
+            images[index].classList.add('active');
+        }
+
+        setInterval(showNextImage, 5000);
+    </script>
+
+    <footer>
+        Made by louay
+    </footer>
+
+</body>
+</html>
